@@ -4,6 +4,8 @@
     padding: 0;
 }
 
+
+/* Page wrapper */
 .page-wrapper {
     width: 100%;
     height: 100vh;
@@ -14,6 +16,7 @@
     justify-content: center;
     overflow: auto;
 }
+
 
 .page-wrapper > div {
     width: 100%;
@@ -38,30 +41,14 @@ h1 {
     justify-content: space-between;
 }
 
-.img-container {
-    overflow: hidden;
-    aspect-ratio: 3 / 2;
-}
 
-.img-container > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Big changing image container */
 #changing-image {
     position: relative;
     flex-basis: calc((98% / 6) * 5);
 }
 
-#changing-image > img {
-    display: none;
-}
-
-#changing-image > img.active {
-    display: block;
-}
-
+/* Buttons to go to previous/next image */
 #changing-image > button {
     position: absolute;
     left: 50%;
@@ -96,24 +83,51 @@ h1 {
     bottom: 10%;
 }
 
+/* Big images */
+#changing-image > img {
+    display: none;
+}
+
+#changing-image > img.active {
+    display: block;
+}
+
+
+/* Images previews */
 #thumbnails-container {
     flex-basis: calc((98% / 6) * 1);
     display: flex;
     flex-direction: column;
 }
 
+/* Single image preview container */
 .thumbnail {
     flex-basis: 20%;
-}
-
-@keyframes thumbnail-glow {
-    0% {background-color: #ffffff;}
-    100% {background-color: #ffffff80;}
 }
 
 .thumbnail.active {
     padding: 2px;
     animation: thumbnail-glow 2s alternate infinite ease-in-out;
+}
+
+/* Rule for every image container and every image */
+.img-container {
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+}
+
+.img-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Animation for active preview */
+@keyframes thumbnail-glow {
+    0% {background-color: #ffffff;}
+    100% {background-color: #ffffff80;}
 }
 
 
