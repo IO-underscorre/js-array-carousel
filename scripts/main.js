@@ -27,11 +27,13 @@ function activeTheAdjacent(isOrderFromFirstToLast = true) {
             thumbnailContainers[i].classList.remove('active');
             
             if (isOrderFromFirstToLast) {
-                i + 1 < PrimaryImages.length ? PrimaryImages[i + 1].classList.add('active') : PrimaryImages[0].classList.add('active');
-                i + 1 < thumbnailContainers.length ? thumbnailContainers[i + 1].classList.add('active') : thumbnailContainers[0].classList.add('active');
+                const index = i + 1 < primaryImages.length ? i + 1 : 0;
+                primaryImages[index].classList.add('active');
+                thumbnailContainers[index].classList.add('active');
             } else {
-                i - 1 >= 0 ? PrimaryImages[i - 1].classList.add('active') : PrimaryImages[PrimaryImages.length - 1].classList.add('active');
-                i - 1 >= 0 ? thumbnailContainers[i - 1].classList.add('active') : thumbnailContainers[thumbnailContainers.length - 1].classList.add('active');
+                const index = i - 1 >= 0 ? i - 1 : primaryImages.length - 1;
+                primaryImages[index].classList.add('active');
+                thumbnailContainers[index].classList.add('active');
             }
         }
     }
