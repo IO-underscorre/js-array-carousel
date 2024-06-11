@@ -54,6 +54,14 @@ h1 {
     flex-basis: calc((98% / 6) * 5);
 }
 
+#changing-image > img {
+    display: none;
+}
+
+#changing-image > img.active {
+    display: block;
+}
+
 #changing-image > button {
     position: absolute;
     left: 50%;
