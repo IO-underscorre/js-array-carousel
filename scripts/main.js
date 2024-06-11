@@ -1,8 +1,9 @@
 const imagePaths = ['images/01.webp' , 'images/02.webp', 'images/03.webp', 'images/04.webp', 'images/05.webp'];
+const largeImageContainer = document.getElementById('changing-image') , thumbnailContainers = document.getElementsByClassName('thumbnail');
 
 // Insert images in the page
 for (let i = 0 ; i < imagePaths.length ; i++) {
-    const imageContainers = [document.getElementById('changing-image') , document.getElementsByClassName('thumbnail')[i]];
+    const imageContainers = [largeImageContainer , thumbnailContainers[i]];
 
     for (let j = 0 ; j < 2 ; j++) {
         const image = document.createElement('img');
@@ -14,15 +15,15 @@ for (let i = 0 ; i < imagePaths.length ; i++) {
     }
 }
 
+const primaryImages = document.querySelectorAll('#changing-image > img');
+
 // Function to check images with active class, remove the class and set as active the one behind or after
 function activeTheAdjacent(isOrderFromFirstToLast = true) {
-    const PrimaryImages = document.querySelectorAll('#changing-image > img') , thumbnailContainers = document.getElementsByClassName('thumbnail');
-
     for(let i = 0 , found = false ; !found ; i++) {
-        if(PrimaryImages[i].className.includes('active')) {
+        if(primaryImages[i].className.includes('active')) {
             found = true;
             
-            PrimaryImages[i].classList.remove('active');
+            primaryImages[i].classList.remove('active');
             thumbnailContainers[i].classList.remove('active');
             
             if (isOrderFromFirstToLast) {
