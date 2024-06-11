@@ -49,12 +49,12 @@ h1 {
     object-fit: cover;
 }
 
-.changing-image {
+#changing-image {
     position: relative;
     flex-basis: calc((98% / 6) * 5);
 }
 
-.changing-image > button {
+#changing-image > button {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
@@ -72,11 +72,11 @@ h1 {
     cursor: pointer;
 }
 
-.changing-image > button:hover {
+#changing-image > button:hover {
     opacity: 50%;
 }
 
-.changing-image > button:active {
+#changing-image > button:active {
     opacity: 75%;
 }
 
@@ -88,7 +88,7 @@ h1 {
     bottom: 10%;
 }
 
-.thumbnails-container {
+#thumbnails-container {
     flex-basis: calc((98% / 6) * 1);
     display: flex;
     flex-direction: column;
@@ -122,11 +122,11 @@ h1 {
         flex-direction: column;
     }
 
-    .changing-image > button {
+    #changing-image > button {
         font-size: 3.5vw;
     }
     
-    .thumbnails-container {
+    #thumbnails-container {
         flex-direction: row;
     }
 }
