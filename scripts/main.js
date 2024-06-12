@@ -26,15 +26,16 @@ function activeTheAdjacent(largeImages , smallImageContainers , isOrderFromFirst
             largeImages[i].classList.remove('active');
             smallImageContainers[i].classList.remove('active');
             
+            let index;
+
             if (isOrderFromFirstToLast) {
-                const index = i + 1 < largeImages.length ? i + 1 : 0;
-                largeImages[index].classList.add('active');
-                smallImageContainers[index].classList.add('active');
+                index = i + 1 < largeImages.length ? i + 1 : 0;
             } else {
-                const index = i - 1 >= 0 ? i - 1 : largeImages.length - 1;
-                largeImages[index].classList.add('active');
-                smallImageContainers[index].classList.add('active');
+                index = i - 1 >= 0 ? i - 1 : largeImages.length - 1;
             }
+            
+            largeImages[index].classList.add('active');
+            smallImageContainers[index].classList.add('active');
         }
     }
 }
