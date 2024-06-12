@@ -40,10 +40,10 @@ function activeTheAdjacent(isOrderFromFirstToLast = true) {
 }
 
 
-const nextBtn = document.getElementsByTagName('button');
+const btns = document.getElementsByTagName('button');
 
 // Calling the function on click on arrow, for previous arrow passing false as argument to revert the logic of the function and obtaining the previous item instead of the next one
-nextBtn[0].addEventListener('click' , function () {
+btns[0].addEventListener('click' , function () {
     activeTheAdjacent(false);
 });
-nextBtn[1].addEventListener('click' , activeTheAdjacent);
+btns[1].addEventListener('click' , activeTheAdjacent);
